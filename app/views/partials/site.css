@@ -1,0 +1,18 @@
+#dropdownMenuButton{ 
+	background-color: #FFF; 
+	color: #000;
+}
+
+.dropdown-menu { 
+	right: 0;
+	 left: auto;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}

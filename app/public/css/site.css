@@ -9,14 +9,14 @@
 }
 
 .header, .footer{
-  /*background-color: #FAEEFF;*/
-  margin-left: 20px;
-  margin-right: 20px;
+/*  background-color: #FAEEFF;*/
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .footer{
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 .search-bar{

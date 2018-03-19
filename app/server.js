@@ -7,7 +7,13 @@ app.set('view engine', 'ejs')
 
 let index = require('./routes/index');
 
+let searchResults = require('./routes/searchResults');
+
+let placementInfo = require('./routes/placementInfo');
+
 app.use('/', index);
+app.use('/search', searchResults);
+app.use('/placementInfo', placementInfo);
 
 app.use(function (req,res,next) {
   console.log("/" + req.method);

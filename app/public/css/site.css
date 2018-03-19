@@ -8,13 +8,22 @@
 	left: auto;
 }
 
+header, footer{
+  background-color: #fff;
+}
+
 .header, .footer{
 /*  background-color: #FAEEFF;*/
   padding-left: 20px;
   padding-right: 20px;
 }
 
+.header{
+  border-bottom: 1px solid #5D4970;
+}
+
 .footer{
+  border-top: 1px solid #5D4970;
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
@@ -22,4 +31,20 @@
 .search-bar{
   margin-top: 35px;
   margin-bottom: 35px;
+}
+
+.bg-cover{
+  z-index: -1;
+    background-image: url("../images/rgu.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+   -o-filter: blur(5px);
+   -ms-filter: blur(5px);
+   filter: blur(5px);
+}
+
+.description{
+   color:white;
 }

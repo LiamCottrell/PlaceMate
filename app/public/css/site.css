@@ -1,9 +1,9 @@
-#dropdownMenuButton{ 
-	background-color: #FFF; 
+#dropdownMenuButton{
+	background-color: #FFF;
 	color: #000;
 }
 
-.dropdown-menu { 
+.dropdown-menu {
 	right: 0;
 	left: auto;
 }
@@ -33,6 +33,7 @@ header, footer{
   margin-bottom: 35px;
 }
 
+<<<<<<< HEAD
 .bg-cover{
   z-index: -1;
     background-image: url("../images/rgu.jpg");
@@ -48,3 +49,37 @@ header, footer{
 .description{
    color:white;
 }
+=======
+/* For the search page */
+.searchResults {
+	text-align: justify;
+	margin-right: 12%;
+	margin-left: 12%;
+}
+
+.placementInfo {
+	text-align: justify;
+	margin-right: 12%;
+	margin-left: 12%;
+	margin-bottom: 8%;
+}
+
+.applyButton {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.applyButton:hover {
+	background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+>>>>>>> ae192f57c6eb7c44f383bc4996d468d3b523a36d

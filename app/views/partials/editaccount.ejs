@@ -1,0 +1,32 @@
+<div class="container col-lg-8 col-md-10 col-sm-12 justify-content-center"
+  <nav>
+    <div class="nav nav-tabs justify-content-center " id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-email-tab" data-toggle="tab" href="#nav-email" role="tab" aria-controls="nav-email" aria-selected="true">
+        Change Email
+      </a>
+      <a class="nav-item nav-link" id="nav-password-tab" data-toggle="tab" href="#nav-password" role="tab" aria-controls="nav-password" aria-selected="false">
+        Change Password
+      </a>
+      <a class="nav-item nav-link" id="nav-name-tab" data-toggle="tab" href="#nav-name" role="tab" aria-controls="nav-name" aria-selected="false">
+        Change Name
+      </a>
+      <a class="nav-item nav-link" id="nav-delete-tab" data-toggle="tab" href="#nav-delete" role="tab" aria-controls="nav-delete" aria-selected="false">
+        Delete Account
+      </a>
+    </div>
+    <div class="tab-content text-center" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-email" role="tabpanel" aria-labelledby="nav-email-tab">
+      <% include ../partials/navpartials/email %>
+    </div>
+    <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
+      <% include ../partials/navpartials/password %>
+    </div>
+    <div class="tab-pane fade" id="nav-name" role="tabpanel" aria-labelledby="nav-name-tab">
+      <% include ../partials/navpartials/name %>
+    </div>
+    <div class="tab-pane fade" id="nav-delete" role="tabpanel" aria-labelledby="nav-delete-tab">
+      <% include ../partials/navpartials/delete %>
+    </div>
+  </nav>
+</div>
+</div>

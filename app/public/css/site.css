@@ -58,7 +58,7 @@ header, footer{
     -moz-filter: grayscale(0.8);
      -o-filter: grayscale(0.8);
      -ms-filter: grayscale(0.8);
-     filter: grayscale(0.8);     
+     filter: grayscale(0.8);
 }
 
 
@@ -93,4 +93,15 @@ header, footer{
 	background-color: white;
   color: black;
   border: 2px solid #4CAF50;
+}
+
+.form-group {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.btn-group {
+	margin-left: 45%;
+	margin-right: 45%;
+	text-align: center;
 }

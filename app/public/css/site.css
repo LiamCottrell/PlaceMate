@@ -22,6 +22,10 @@ header, footer{
   border-bottom: 1px solid #5D4970;
 }
 
+.content{
+	padding-bottom: 10vh;
+}
+
 .footer{
   border-top: 1px solid #5D4970;
   padding-top: 2vh;
@@ -29,13 +33,18 @@ header, footer{
 }
 
 .search-bar{
-  margin-top: 35px;
-  margin-bottom: 35px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.searchColor{
+	background-color: #59535E;
+	filter: drop-shadow(0px 5px 5px #1F1F1F);
 }
 
 
 .jumbotron .bg-cover{
-    background-image: url("../images/rgu.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("../images/rgu.jpg");
     position: absolute;
     top: 0;
     left: 0;
@@ -45,22 +54,18 @@ header, footer{
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
+/*    -moz-filter: contrast(125%) grayscale(0.8);
+     -o-filter: contrast(125%) grayscale(0.8);
+     -ms-filter: contrast(125%) grayscale(0.8);
+     filter: contrast(125%) grayscale(0.8); */
 }
 
 .description{
 	color:white;
 	margin-bottom: 0px;
 	position: relative;
-	background: none;
+	background: none; 
 }
-.description:hover{
-    -webkit-filter: grayscale(0.8);
-    -moz-filter: grayscale(0.8);
-     -o-filter: grayscale(0.8);
-     -ms-filter: grayscale(0.8);
-     filter: grayscale(0.8);     
-}
-
 
 /* For the search page */
 .searchResults {

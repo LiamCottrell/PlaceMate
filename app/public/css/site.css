@@ -33,23 +33,35 @@ header, footer{
   margin-bottom: 35px;
 }
 
-<<<<<<< HEAD
-.bg-cover{
-  z-index: -1;
+
+.jumbotron .bg-cover{
     background-image: url("../images/rgu.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-   -o-filter: blur(5px);
-   -ms-filter: blur(5px);
-   filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .description{
-   color:white;
+	color:white;
+	margin-bottom: 0px;
+	position: relative;
+	background: none;
 }
-=======
+.description:hover{
+    -webkit-filter: grayscale(0.8);
+    -moz-filter: grayscale(0.8);
+     -o-filter: grayscale(0.8);
+     -ms-filter: grayscale(0.8);
+     filter: grayscale(0.8);     
+}
+
+
 /* For the search page */
 .searchResults {
 	text-align: justify;
@@ -82,4 +94,3 @@ header, footer{
   color: black;
   border: 2px solid #4CAF50;
 }
->>>>>>> ae192f57c6eb7c44f383bc4996d468d3b523a36d

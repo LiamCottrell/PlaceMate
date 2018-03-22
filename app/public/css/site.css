@@ -138,3 +138,7 @@ header, footer{
 .mapObject{
 	height: 40vh;
 }
+
+.loginform{
+	margin-top: 40px;
+}

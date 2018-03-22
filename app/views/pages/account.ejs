@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
+ <!-- page builder that will pull in partials (prebuilt page sections) and form a full working webpage from that !-->
   <% include ../partials/head %>
   <body>
     <% include ../partials/header %>
     <% include ../partials/search-bar %>
-    <div class="content"> 
+    <div class="content">
       <div class="spacer"></div>
       <% include ../partials/editaccount %>
-    </div>    
-    <% include ../partials/footer %>      
+    </div>
+    <% include ../partials/footer %>
     <% include ../partials/scripts %>
-
+<!-- pull in page unique scripts !-->
   <script src="js/account/account.js"></script>
   </body>
 </html>

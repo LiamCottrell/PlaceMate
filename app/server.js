@@ -11,10 +11,15 @@ let searchResults = require('./routes/searchResults');
 
 let placementInfo = require('./routes/placementInfo');
 
+let login = require('./routes/login');
+
+let account = require('./routes/account');
+
 app.use('/', index);
 app.use('/search', searchResults);
 app.use('/placementInfo', placementInfo);
-
+app.use('/login', login);
+app.use('/account', account);
 app.use(function (req,res,next) {
   console.log("/" + req.method);
   next();

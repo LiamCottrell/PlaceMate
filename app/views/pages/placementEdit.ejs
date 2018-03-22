@@ -4,6 +4,7 @@
       page where needed.-->
 <!doctype html>
 <html lang="en">
+<!-- page builder that will pull in partials (prebuilt page sections) and form a full working webpage from that !-->
   <% include ../partials/head %>
   <body>
     <% include ../partials/header %>
@@ -11,13 +12,15 @@
 <!-- Including this particular partial is unique to this specific page. The content will show
       what was coded in the PlacementEdit partial page. -->
     <div class="content">
-      <div class="spacer"></div>
-      <% include ../partials/placementEdit %>
+      <div class="spacer">
+      </div>
+        <% include ../partials/placementEdit %>
     </div>
 
     <% include ../partials/footer %>
 
     <% include ../partials/scripts %>
+    <!-- pull in page unique scripts !-->
     <script src="js/generic/generic.js"></script>
   </body>
 </html>

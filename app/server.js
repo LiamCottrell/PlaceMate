@@ -18,15 +18,17 @@ let login = require('./routes/login');
 
 let account = require('./routes/account');
 
+let register = require('./routes/register');
+
 //Here is where those links are then used when the user adds a key word after the / in the url
 
 app.use('/', index);
 app.use('/search', searchResults);
 app.use('/placementInfo', placementInfo);
 app.use('/placementEdit', placementEdit);
-
 app.use('/login', login);
 app.use('/account', account);
+app.use('/register', register);
 
 app.use(function (req,res,next) {
   console.log("/" + req.method);

@@ -1,3 +1,8 @@
+//User jquery so when a button is clicked
+//get the current url loaded into the interacted window
+//produce a substring of that url so we cut off the end
+//Replace that with our destination and load it.
+//These are for test purposes.
 $("#indexButton").click(function() {
   var pathname = window.location.pathname;
   pathname = pathname.substring(0, pathname.indexOf("/"));

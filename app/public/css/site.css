@@ -65,7 +65,7 @@ header, footer{
 	color:white;
 	margin-bottom: 3vh;
 	position: relative;
-	background: none; 
+	background: none;
 }
 
 .description:hover{
@@ -88,6 +88,14 @@ header, footer{
 	margin-right: 12%;
 	margin-left: 12%;
 	margin-bottom: 8%;
+}
+
+.placementTitle{
+	margin-bottom: 5vh;
+}
+
+.placementTitle > img{
+	padding: 5px;
 }
 
 .applyButton {
@@ -118,6 +126,15 @@ header, footer{
 	margin-left: 45%;
 	margin-right: 45%;
 	text-align: center;
+}
 .navbarcontent {
 	margin-top: 26px;
+}
+
+.spacer {
+	height: 5vh;
+}
+
+.mapObject{
+	height: 40vh;
 }

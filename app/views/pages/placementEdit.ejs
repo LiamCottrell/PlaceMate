@@ -1,9 +1,15 @@
+<!-- Instead of creating the same template pages but changing the content
+      we are utilising Partials. This means we can create the Footers and Headers
+      seperately as they will be used for all pages. Then we can include them into the
+      page where needed.-->
 <!doctype html>
 <html lang="en">
   <% include ../partials/head %>
   <body>
     <% include ../partials/header %>
 
+<!-- Including this particular partial is unique to this specific page. The content will show
+      what was coded in the PlacementEdit partial page. -->
     <div class="content">
       <div class="spacer"></div>
       <% include ../partials/placementEdit %>

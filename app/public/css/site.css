@@ -138,3 +138,14 @@ header, footer{
 .mapObject{
 	height: 40vh;
 }
+
+.main-section{
+	padding: 15px;
+	background:#f1f1f1;
+}
+.custom-file-control::after {
+  content: "Choose file...";
+}
+.custom-file-control::before {
+  content: "Browse";
+}

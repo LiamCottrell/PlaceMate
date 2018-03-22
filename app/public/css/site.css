@@ -68,6 +68,14 @@ header, footer{
 	background: none; 
 }
 
+.description:hover{
+    -webkit-filter: grayscale(0.8);
+    -moz-filter: grayscale(0.8);
+     -o-filter: grayscale(0.8);
+     -ms-filter: grayscale(0.8);
+     filter: grayscale(0.8);
+}
+
 /* For the search page */
 .searchResults {
 	text-align: justify;
@@ -99,4 +107,8 @@ header, footer{
 	background-color: white;
   color: black;
   border: 2px solid #4CAF50;
+}
+
+.navbarcontent {
+	margin-top: 26px;
 }

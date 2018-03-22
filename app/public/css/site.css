@@ -24,6 +24,7 @@ header, footer{
 
 .content{
 	padding-bottom: 10vh;
+	overflow-y: auto;
 }
 
 .footer{
@@ -62,7 +63,7 @@ header, footer{
 
 .description{
 	color:white;
-	margin-bottom: 0px;
+	margin-bottom: 3vh;
 	position: relative;
 	background: none; 
 }

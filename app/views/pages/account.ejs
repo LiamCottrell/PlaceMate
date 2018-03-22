@@ -4,11 +4,13 @@
   <body>
     <% include ../partials/header %>
     <% include ../partials/search-bar %>
-    <% include ../partials/editaccount %>
-  </body>
-  <footer>
-    <% include ../partials/footer %>
-  </footer>
-  <% include ../partials/scripts %>
+    <div class="content"> 
+      <div class="spacer"></div>
+      <% include ../partials/editaccount %>
+    </div>    
+    <% include ../partials/footer %>      
+    <% include ../partials/scripts %>
+
   <script src="js/account/account.js"></script>
+  </body>
 </html>

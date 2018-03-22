@@ -13,10 +13,17 @@ let placementInfo = require('./routes/placementInfo');
 
 let placementEdit = require('./routes/placementEdit');
 
+let login = require('./routes/login');
+
+let account = require('./routes/account');
+
 app.use('/', index);
 app.use('/search', searchResults);
 app.use('/placementInfo', placementInfo);
 app.use('/placementEdit', placementEdit);
+
+app.use('/login', login);
+app.use('/account', account);
 
 app.use(function (req,res,next) {
   console.log("/" + req.method);

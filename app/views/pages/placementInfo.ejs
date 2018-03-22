@@ -2,14 +2,14 @@
 <html lang="en">
   <% include ../partials/head %>
   <body>
-  	<% include ../partials/header %>
-
-	<% include ../partials/search-bar %>
-
-  	<% include ../partials/placementInfo %>
-
-	<% include ../partials/footer %>
-
+    <% include ../partials/header %>
+    <% include ../partials/search-bar %>
+    <div class="content">
+      <div class="spacer"></div>
+      <% include ../partials/placementInfo %>
+    </div>
+    <% include ../partials/footer %>
     <% include ../partials/scripts %>
+    <script src="js/map/map.js"></script>
   </body>
 </html>

@@ -12,7 +12,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">@</span>
           </div>
-          <input type="text" class="form-control" placeholder="Student Username" aria-label="Username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Student Username" aria-label="Username" aria-describedby="basic-addon1" id="LoginStudentUsername">
         </div>
       </form>
       <!-- Form that will hold our addon and our text input box!-->
@@ -21,10 +21,10 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">*</span>
           </div>
-        <input type="text" class="form-control" placeholder="Student Password" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Student Password" aria-label="Username" aria-describedby="basic-addon1" id="LoginStudentPassword">
         </div>
       </form>
-      <form class="form-inline justify-content-center">
+      <form id = "StudentForm"class="form-inline justify-content-center" action="/student" method="POST">
         <!-- Class to contain our login button!-->
         <div class="input-group mb-3">
           <button type="button" class="btn btn-dark" id="UserLogin">Log in</button>

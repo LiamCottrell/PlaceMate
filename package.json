@@ -1,20 +1,32 @@
 {
-  "name": "PlaceMate Express Application",
+  "name": "placemate",
   "version": "0.0.2",
-  "scripts": {
-    "start": "node Server.js"
-  },
+  "description": "A Placement search application made for RGU university.",
   "dependencies": {
-    "ejs": "^2.5.7",
-    "express": "latest",
     "bcryptjs": "*",
     "body-parser": "*",
     "connect-flash": "*",
+    "ejs": "^2.5.7",
+    "express": "latest",
     "express-messages": "*",
     "express-session": "*",
-    "express-validator": "*",
+    "express-validator": "^5.1.2",
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiamCottrell/PlaceMate.git"
+  },
+  "author": "Liam Cottrell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiamCottrell/PlaceMate/issues"
+  },
+  "homepage": "https://github.com/LiamCottrell/PlaceMate#readme"
 }

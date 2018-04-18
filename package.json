@@ -1,11 +1,23 @@
 {
-  "name": "website-using-express",
-  "version": "0.0.1",
+  "name": "PlaceMate Express Application",
+  "version": "0.0.2",
   "scripts": {
     "start": "node Server.js"
   },
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "latest"
+    "express": "latest",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
   }
 }

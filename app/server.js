@@ -7,6 +7,7 @@ const { matchedData, sanitize } = require('express-validator/filter'); // More I
 var flash = require('connect-flash'); // Create Flash Messages 
 var session = require('express-session'); // Use of Session to allow us to keep perpetual sessions between pages
 var passport = require('passport'); //  authentication middleware for Node.js
+const mongoose = require('mongoose');
 
 /*Setup and configure Authentication System strategies*/
 var LocalStrategy = require('passport-local').Strategy;
@@ -45,13 +46,91 @@ let login = require('./routes/login');
 let account = require('./routes/account');
 let register = require('./routes/register');
 
+
+
+var app = express();
+
+
+//Connection to mongodb
+
+mongoose.connect('mongodb://localhost/DataMate');
+
+
+
+mongoose.connection.once('open', function(){
+
+  console.log("Connection made")
+
+}).on('error',function(error){
+
+  console.log("Attempted Connection Failed")
+
+});
+
+
+
+app.use(express.static(__dirname + '/public'));
+
+
+
+app.use(bodyParser.urlencoded({extended:true}))
+
+
+
+app.set('view engine', 'ejs')
+
+
+
+//Here is where we link the pages through routes
+
+let index = require('./routes/index');
+
+
+
+let searchResults = require('./routes/searchResults');
+
+
+
+let placementInfo = require('./routes/placementInfo');
+
+
+
+let placementEdit = require('./routes/placementEdit');
+
+
+
+let login = require('./routes/login');
+
+
+
+let account = require('./routes/account');
+
+
+
+let register = require('./routes/register');
+
+
+
+//Configure serverside JS
+var StudentController = require('./serverJS/controllers/student')
+
+var placementController = require('./serverJS/controllers/placement')
+
+var companyController = require('./serverJS/controllers/company')
+
 /*Define page redirection paths*/
 app.use('/', index);
+
 app.use('/search', searchResults);
+
 app.use('/placementInfo', placementInfo);
+
 app.use('/placementEdit', placementEdit);
+
 app.use('/login', login);
+
 app.use('/account', account);
+
 app.use('/register', register);
 
 /*Every Request to our page*/
@@ -69,4 +148,13 @@ app.use(function (req,res,next) {
 /*Set Port for our application to be listening to requests on*/
 app.listen(3000,function(){
 	console.log("Live at Port 3000");
+});
+
+
+app.use(function (req,res,next) {
+
+  console.log("/" + req.method);
+
+  next();
+
 });

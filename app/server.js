@@ -4,9 +4,9 @@ var app = express();
 
 
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 
 

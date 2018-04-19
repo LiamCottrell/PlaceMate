@@ -4,12 +4,10 @@ const Schema = mongoose.Schema;
 //Create Schema and Model
 
 const CompanySchema = new Schema({
-  Firstname: String,
-  Lastname: String,
+  Name: String,
+  Logo: String,
   Email: String,
-  Password: String,
-  Course: String,
-  City: String
+  Password: String
 });
 
 const Company = mongoose.model('company', CompanySchema);

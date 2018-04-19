@@ -10,7 +10,18 @@ router.post('/auth', function(req,res){
 });
 
 router.get('/get', function(req,res){
-  StudentController.FindAll();
+  StudentController.FindAll().then( function(users){
+       res.json(users);
+  });
 });
 
+router.post('/remove', function(req,res){
+  StudentController.Remove(req.body.Username);
+});
+
+router.get('/fineOne', function(req,res){
+  StudentController.FindOne(req.query.Firstname).then( function(users){
+       res.json(users);
+  });
+});
 module.exports = router;

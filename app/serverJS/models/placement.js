@@ -4,12 +4,9 @@ const Schema = mongoose.Schema;
 //Create Schema and Model
 
 const PlacementSchema = new Schema({
-  Firstname: String,
-  Lastname: String,
-  Email: String,
-  Password: String,
-  Course: String,
-  City: String
+  Title: String,
+  About: String,
+  Requirements: String
 });
 
 const Placement = mongoose.model('placement', PlacementSchema);

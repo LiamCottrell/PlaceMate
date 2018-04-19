@@ -11,22 +11,22 @@ module.exports = {
   },
 
   FindAll: function () {
-    Student.find().then(function(result){
-      result.forEach(function(item){
-        console.log(item._id)
-      })
-    })
+    return Student.find()
   },
 
-  FindOne: function (name, password) {
-    Student.find().then(function(result){
-      result.forEach(function(item){
-        console.log(item.username)
-      })
-    })
+  FindOne: function (name) {
+    return Student.findOne({Firstname : name})
   },
 
   Remove: function (name) {
-    Student.remove({Firstname:name})
+    Student.findOne({ Firstname : name}, function (err, model) {
+    if (err) {
+        return;
+    }
+    Student.remove(function (err) {
+        
+        console.log(name + " has been removed from the database")
+    });
+});
   }
 };

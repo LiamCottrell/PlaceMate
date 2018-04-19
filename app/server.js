@@ -46,40 +46,25 @@ let login = require('./routes/login');
 let account = require('./routes/account');
 let register = require('./routes/register');
 
-
-
 var app = express();
-
 
 //Connection to mongodb
 
 mongoose.connect('mongodb://localhost/DataMate');
-
-
 
 mongoose.connection.once('open', function(){
 
   console.log("Connection made")
 
 }).on('error',function(error){
-
   console.log("Attempted Connection Failed")
-
 });
-
-
 
 app.use(express.static(__dirname + '/public'));
 
-
-
 app.use(bodyParser.urlencoded({extended:true}))
 
-
-
 app.set('view engine', 'ejs')
-
-
 
 //Configure serverside JS
 var StudentController = require('./serverJS/controllers/student')
@@ -108,10 +93,10 @@ app.use(function (req,res,next) {
 	/*Display to console the request method for testing*/
   	console.log("/" + req.method);
 	/*Global Variables*/
-  	res.locals.success_msg = req.flash('success_msg');
-  	res.locals.error_msg = req.flash('error_msg');
+  	//res.locals.success_msg = req.flash('success_msg');
+  	//res.locals.error_msg = req.flash('error_msg');
   	/*Passport specific error messages*/
-  	res.locals.error = req.flash('error');
+  	//res.locals.error = req.flash('error');
   	next();
 });
 
@@ -122,9 +107,6 @@ app.listen(3000,function(){
 
 
 app.use(function (req,res,next) {
-
-  console.log("/" + req.method);
-
-  next();
-
+	console.log("/" + req.method);
+	next();
 });

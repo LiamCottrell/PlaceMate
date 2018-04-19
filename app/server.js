@@ -81,36 +81,6 @@ app.set('view engine', 'ejs')
 
 
 
-//Here is where we link the pages through routes
-
-let index = require('./routes/index');
-
-
-
-let searchResults = require('./routes/searchResults');
-
-
-
-let placementInfo = require('./routes/placementInfo');
-
-
-
-let placementEdit = require('./routes/placementEdit');
-
-
-
-let login = require('./routes/login');
-
-
-
-let account = require('./routes/account');
-
-
-
-let register = require('./routes/register');
-
-
-
 //Configure serverside JS
 var StudentController = require('./serverJS/controllers/student')
 

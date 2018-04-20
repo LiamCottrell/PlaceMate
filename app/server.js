@@ -17,7 +17,7 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 
 /*Set Application vue engine to EJS*/
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 /*Declare BodyParser Middleware*/
 app.use(bodyParser.json());
@@ -62,16 +62,16 @@ mongoose.connection.once('open', function(){
 
 app.use(express.static(__dirname + '/public'));
 
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:true}));
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 //Configure serverside JS
-var StudentController = require('./serverJS/controllers/student')
+var StudentController = require('./serverJS/controllers/student');
 
-var placementController = require('./serverJS/controllers/placement')
+var placementController = require('./serverJS/controllers/placement');
 
-var companyController = require('./serverJS/controllers/company')
+var companyController = require('./serverJS/controllers/company');
 
 /*Define page redirection paths*/
 app.use('/', index);

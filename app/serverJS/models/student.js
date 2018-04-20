@@ -38,4 +38,4 @@ module.exports.createStudent = function(newStudent, callback){
 			newStudent.save(callback);
 		});
 	});
-}
+};

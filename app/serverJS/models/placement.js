@@ -11,4 +11,4 @@ const PlacementSchema = new Schema({
 
 const Placement = mongoose.model('placement', PlacementSchema);
 
-module.exports = Placement
+module.exports = Placement;

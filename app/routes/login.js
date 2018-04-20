@@ -1,5 +1,5 @@
 let router = require('express').Router();
-let StudentController = require('../serverJS/controllers/student')
+let StudentController = require('../serverJS/controllers/student');
 
 router.get('/', function(req, res, next) {
     res.render('pages/login');

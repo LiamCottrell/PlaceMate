@@ -10,7 +10,7 @@ $("#CompanyLogin").click(function() {
     dataType:'json',
     data: data
   });
-})
+});
 
 $("#UserLogin").click(function() {
   var data = {
@@ -23,4 +23,4 @@ $("#UserLogin").click(function() {
     dataType:'json',
     data: data
   });
-})
+});

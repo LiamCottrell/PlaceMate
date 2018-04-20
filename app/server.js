@@ -91,13 +91,13 @@ app.use('/register', register);
 /*Every Request to our page*/
 app.use(function (req,res,next) {
 	/*Display to console the request method for testing*/
-  	console.log("/" + req.method);
+	console.log("/" + req.method);
 	/*Global Variables*/
-  	//res.locals.success_msg = req.flash('success_msg');
-  	//res.locals.error_msg = req.flash('error_msg');
-  	/*Passport specific error messages*/
-  	//res.locals.error = req.flash('error');
-  	next();
+	//res.locals.success_msg = req.flash('success_msg');
+	//res.locals.error_msg = req.flash('error_msg');
+	/*Passport specific error messages*/
+	//res.locals.error = req.flash('error');
+	next();
 });
 
 /*Set Port for our application to be listening to requests on*/

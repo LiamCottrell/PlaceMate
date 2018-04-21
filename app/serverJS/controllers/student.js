@@ -1,38 +1,23 @@
 const Student = require('../models/student');
 module.exports = {
-  Add: function (body) {
-    var student = new Student({
-      First_Name: body.FirstName,
-      Last_Name: body.Last_Name,
-      Email: body.Email,
-      Password: body.Password,
-      City: body.City,
-      DoB: body.DoB,
-      Profession: body.Profession
-    });
-    student.save().then(function(){
-      console.log(body.Email + " created an account")
-      console.log(body)
-    });
-  },
 
-  FindAll: function () {
-    return Student.find()
-  },
+    FindAll: function () {
+        return Student.find()
+    },
 
-  FindOne: function (name) {
-    return Student.findOne({Firstname : name})
-  },
+    FindOne: function (name) {
+        return Student.findOne({first_name: name})
+    },
 
-  Remove: function (name) {
-    Student.findOne({ Firstname : name}, function (err, model) {
-    if (err) {
-        return;
+    Remove: function (name) {
+        Student.findOne({first_name: name}, function (err, model) {
+            if (err) {
+                return;
+            }
+            Student.remove(function (err) {
+
+                console.log(name + " has been removed from the database")
+            });
+        });
     }
-    Student.remove(function (err) {
-
-        console.log(name + " has been removed from the database")
-    });
-});
-  }
 };

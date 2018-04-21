@@ -21,11 +21,11 @@ module.exports = {
       console.log(placement.CompanyName + " has added: " + placement.Title + ", to the Placement collection /n Full Information - ", placement)
     });
   },
- 
+
   FindOne: function (title) {
     return Placement.findOne({Title : title})
   },
-    
+
   SearchPlacements: function(SearchParameter) {
     return Placement.find().or(
         [{CompanyName: new RegExp(SearchParameter, 'i')},
@@ -37,9 +37,9 @@ module.exports = {
         {Subject: new RegExp(SearchParameter, 'i')},
         {Length: new RegExp(SearchParameter, 'i')}])
   },
-    
+
     PanelInfo: function(SearchParameter) {
-    return placement.find({Subject: new RegExp(SearchParameter, 'i')}).limit(4)
+    console.log(SearchParameter)
+    return Placement.find({Subject: new RegExp(SearchParameter, 'i')}).limit(4)
   }
 }
-

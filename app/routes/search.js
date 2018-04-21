@@ -12,7 +12,7 @@ let PlacementController = require('../serverJS/controllers/placement.js');
 router.get('/', function(req, res, next) {
     /*Query the Placement controller and search for all relivent placements with
     the "GET" paramiter of SearcgParameter*/
-    PlacementController.SearchPlacements(req.query.SearchPlacements).then(function(results){
+    PlacementController.SearchPlacements(req.query.SearchParameter).then(function(results){
         /*Send the result of the query to the search page to be handled*/
         res.render('pages/search', {
           placement: results

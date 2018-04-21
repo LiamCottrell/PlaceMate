@@ -14,7 +14,9 @@ module.exports = {
       Address: body.Address,
       City: body.City,
       Postcode: body.Postcode,
-      DateAdded: body.DateAdded
+      DateAdded: body.DateAdded,
+      Link: body.String,
+      Pay: body.Pay
     });
 
     placement.save().then(function(){
@@ -22,7 +24,7 @@ module.exports = {
     });
   },
 
-  FindOne: function (title) {
+  PlacementInfo: function (title) {
     return Placement.findOne({Title : title})
   },
 

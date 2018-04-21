@@ -6,12 +6,12 @@ const Schema = mongoose.Schema;
 const PlacementSchema = new Schema({
   CompanyName: String,
   Title: {
-      type: String, 
+      type: String,
       index: true
   },
   About: String,
   Role: String,
-  Requirements: String,
+  Requirements: Array,
   HowToApply: String,
   Location: String,
   Subject: String,
@@ -20,7 +20,8 @@ const PlacementSchema = new Schema({
   City: String,
   Postcode: String,
   DateAdded: String,
-  Pay: String
+  Pay: String,
+  Link: String
 });
 
 const Placement = mongoose.model('placement', PlacementSchema);

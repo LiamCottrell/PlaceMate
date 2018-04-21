@@ -1,30 +1,31 @@
 let router = require('express').Router();
 let StudentController = require('../serverJS/controllers/student');
+let CompanyController = require('../serverJS/controllers/company');
 
 router.get('/', function(req, res, next) {
     res.render('pages/login');
 });
 
-router.post('/auth', function(req,res){
-  StudentController.Add(req.body).then(function(){
-  });
-
+router.get('/Login-C', function(req,res){
+  CompanyController.FindOne(req.query.CompanyName).then(function(user,req){
+      if (user.Email == req.query.Email && user.Password == req.query.Password){
+        res.responseText="Loggedin"
+      }
+      else{
+        res.responseText="Something went wrong"
+      }
+      });
 });
 
-router.get('/get', function(req,res){
-  StudentController.FindAll().then( function(users){
-       res.json(users);
-  });
-});
-
-router.post('/remove', function(req,res){
-  StudentController.Remove(req.body.Username);
-});
-
-router.get('/findOne', function(req,res){
-  StudentController.FindOne(req.query.Firstname).then( function(users){
-       res.json(users);
-  });
+router.get('/Login-S', function(req,res){
+  StudentController.FindOne(req.query.Email).then(function(user,req){
+      if (user.Email == req.query.Email && user.Password == req.query.Password){
+        res.responseText="Loggedin"
+      }
+      else{
+        res.responseText="Something went wrong"
+      }
+      });
 });
 
 module.exports = router;

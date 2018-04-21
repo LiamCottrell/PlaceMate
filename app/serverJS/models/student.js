@@ -18,7 +18,7 @@ const StudentSchema = mongoose.Schema({
     password: String
 });
 
-let Student = module.exports = mongoose.model('Students', StudentSchema);
+let Student = module.exports = mongoose.model('students', StudentSchema);
 
 
 /*Export function called "CreateStudent"
@@ -37,14 +37,13 @@ module.exports.createStudent = function(newStudent, callback){
 /*Aquires Student details with provided email address*/
 
 module.exports.getStudentByEmail = function(email, callback){
-    console.log('now here');
     var query = {email: email};
     Student.findOne(query, callback);
 };
 
 /*Gets Students details with provided id*/
 module.exports.getStudentById = function(id, callback){
-    Student.find({id:id}, callback);
+    Student.findById(id, callback);
 };
 
 

@@ -31,7 +31,7 @@ app.use(session({
 	secret: 'JohnIsaacs',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 7200 }
+    cookie: { maxAge: 60000 }
 }));
 
 /*Declare flash*/
@@ -81,13 +81,21 @@ mongoose.connection.once('open', function(){
   console.log("Attempted Connection Failed - Error: " + error)
 });
 
-app.use(express.static(__dirname + '/public'));
+/*Every Request to our page*/
+app.use(function (req,res,next) {
+    /*Display to console the request method for testing*/
+    console.log("/" + req.method);
+    /*Global Variables*/
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    /*Passport specific error messages*/
+    res.locals.error = req.flash('error');
+    /*Sets the student variable as a variable for our sites if it set on login, else null*/
+    res.locals.student = req.user || null;
+    next();
+});
 
-app.use(bodyParser.urlencoded({extended:true}));
-
-app.set('view engine', 'ejs');
-
-//Load serverside JS Controllers
+//Load server-side JS Controllers
 const StudentController = require('./serverJS/controllers/student');
 
 const PlacementController = require('./serverJS/controllers/placement');
@@ -110,25 +118,9 @@ app.use('/account', account);
 
 app.use('/register', register);
 
-/*Every Request to our page*/
-app.use(function (req,res,next) {
-	/*Display to console the request method for testing*/
-  	console.log("/" + req.method);
-	/*Global Variables*/
-  	res.locals.success_msg = req.flash('success_msg');
-  	res.locals.error_msg = req.flash('error_msg');
-  	/*Passport specific error messages*/
-  	res.locals.error = req.flash('error');
-  	next();
-});
+
 
 /*Set Port for our application to be listening to requests on*/
 app.listen(3000,function(){
 	console.log("Live at Port 3000");
-});
-
-
-app.use(function (req,res,next) {
-	console.log("/" + req.method);
-	next();
 });

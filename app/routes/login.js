@@ -5,7 +5,12 @@ let passport = require('passport');
 let LocalStrategy = require('passport-local');
 
 router.get('/', function(req, res, next) {
-    res.render('pages/login');
+    /*If logged in already, redirect to home page*/
+    if(req.user){
+        res.redirect('/');
+    } else {
+        res.render('pages/login');
+    }
 });
 
 /*

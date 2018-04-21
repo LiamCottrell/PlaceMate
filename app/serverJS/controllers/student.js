@@ -11,7 +11,7 @@ module.exports = {
       Profession: body.Profession
     });
     student.save().then(function(){
-      console.log(body.Email + " has worked")
+      console.log(body.Email + " created an account")
       console.log(body)
     });
   },
@@ -30,7 +30,7 @@ module.exports = {
         return;
     }
     Student.remove(function (err) {
-        
+
         console.log(name + " has been removed from the database")
     });
 });

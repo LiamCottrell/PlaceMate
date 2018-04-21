@@ -7,15 +7,15 @@ const bcrypt = require('bcryptjs');
 /*Create Schema using mongoose and apply schema as a template of how our data will be stored*/
 
 const StudentSchema = mongoose.Schema({
-  First_name: String,
-  Last_name: String,
+  First_Name: String,
+  Last_Name: String,
   Email: {
   	type: String,
   	index : true
   },
   Password: String,
   City: String,
-  DoB: Date,
+  DoB: String,
   Profession: String
 });
 

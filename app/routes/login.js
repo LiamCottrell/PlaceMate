@@ -6,7 +6,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/auth', function(req,res){
-  StudentController.Add(req.body);
+  StudentController.Add(req.body).then(function(){
+  });
+
 });
 
 router.get('/get', function(req,res){

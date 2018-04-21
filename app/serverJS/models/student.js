@@ -7,25 +7,16 @@ const bcrypt = require('bcryptjs');
 /*Create Schema using mongoose and apply schema as a template of how our data will be stored*/
 
 const StudentSchema = mongoose.Schema({
-  first_name: {
-  	type: String
-  },
-  last_name: {
-  	type: String
-  },
-  email: {
+  First_name: String,
+  Last_name: String,
+  Email: {
   	type: String,
   	index : true
   },
-  password: {
-  	type: String
-  },
-  city: {
-  	type: String
-  },
-  date_of_birth: {
-  	type: Date
-  }
+  Password: String,
+  City: String,
+  DoB: Date,
+  Profession: String
 });
 
 var Student = module.exports = mongoose.model('Students', StudentSchema);

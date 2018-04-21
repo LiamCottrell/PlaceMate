@@ -1,12 +1,18 @@
 const Student = require('../models/student');
 module.exports = {
-  Add: function (req) {
+  Add: function (body) {
     var student = new Student({
-      Firstname: req.body.Username,
-      Password: req.body.Password
+      First_Name: body.FirstName,
+      Last_Name: body.Last_Name,
+      Email: body.Email,
+      Password: body.Password,
+      City: body.City,
+      DoB: body.DoB,
+      Profession: body.Profession
     });
     student.save().then(function(){
-      console.log(req.body.Username + " has worked")
+      console.log(body.Email + " has worked")
+      console.log(body)
     });
   },
 

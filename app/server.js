@@ -54,10 +54,10 @@ mongoose.connect('mongodb://localhost/DataMate');
 
 mongoose.connection.once('open', function(){
 
-  console.log("Connection made")
+  console.log("Connection to DataMate Server Made")
 
 }).on('error',function(error){
-  console.log("Attempted Connection Failed")
+  console.log("Attempted Connection Failed - Error: " + error)
 });
 
 app.use(express.static(__dirname + '/public'));
@@ -66,17 +66,18 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.set('view engine', 'ejs');
 
-//Configure serverside JS
-var StudentController = require('./serverJS/controllers/student');
+//Load serverside JS Controllers
+const StudentController = require('./serverJS/controllers/student');
 
-var placementController = require('./serverJS/controllers/placement');
+const PlacementController = require('./serverJS/controllers/placement');
 
-var companyController = require('./serverJS/controllers/company');
+const CompanyController = require('./serverJS/controllers/company');
+
 
 /*Define page redirection paths*/
 app.use('/', index);
 
-app.use('/search', searchResults);
+app.use('/searchResults', searchResults);
 
 app.use('/placementInfo', placementInfo);
 
@@ -91,13 +92,13 @@ app.use('/register', register);
 /*Every Request to our page*/
 app.use(function (req,res,next) {
 	/*Display to console the request method for testing*/
-	console.log("/" + req.method);
+  	console.log("/" + req.method);
 	/*Global Variables*/
-	//res.locals.success_msg = req.flash('success_msg');
-	//res.locals.error_msg = req.flash('error_msg');
-	/*Passport specific error messages*/
-	//res.locals.error = req.flash('error');
-	next();
+  	//res.locals.success_msg = req.flash('success_msg');
+  	//res.locals.error_msg = req.flash('error_msg');
+  	/*Passport specific error messages*/
+  	//res.locals.error = req.flash('error');
+  	next();
 });
 
 /*Set Port for our application to be listening to requests on*/

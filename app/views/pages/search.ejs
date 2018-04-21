@@ -1,18 +1,23 @@
 <!doctype html>
 <html lang="en">
-<!-- page builder that will pull in partials (prebuilt page sections) and form a full working webpage from that !-->
-  <% include ../partials/head %>
-  <body>
-  	<% include ../partials/header %>
+    <head>
+        <% include ../partials/head %>
+        <!--Search Page Specific Css-->
+        <link rel="stylesheet" type="text/css" href="/css/search/search.css">
+    </head>
+    <body>
+        <% include ../partials/header %>
 
-  	<% include ../partials/search-bar %>
+        <% include ../partials/search-bar %>
 
-    <% include ../partials/searchResults %>
+        <div class="container">
+            <% include ../partials/search %>
+        </div>
 
-  	<% include ../partials/footer %>
+        <% include ../partials/footer %>
 
-    <% include ../partials/scripts %>
-    <!-- pull in page unique scripts !-->
-    <script src="js/generic/generic.js"></script>
-  </body>
+        <% include ../partials/scripts %>
+        <!-- pull in page unique scripts !-->
+       <script src="js/generic/generic.js"></script>
+    </body>
 </html>

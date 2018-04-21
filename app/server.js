@@ -39,7 +39,7 @@ app.use(flash());
 
 /*Here is where we link the pages through routes*/
 let index = require('./routes/index');
-let searchResults = require('./routes/searchResults');
+let search = require('./routes/search');
 let placementInfo = require('./routes/placementInfo');
 let placementEdit = require('./routes/placementEdit');
 let login = require('./routes/login');
@@ -77,7 +77,7 @@ const CompanyController = require('./serverJS/controllers/company');
 /*Define page redirection paths*/
 app.use('/', index);
 
-app.use('/searchResults', searchResults);
+app.use('/search', search);
 
 app.use('/placementInfo', placementInfo);
 

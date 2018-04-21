@@ -1,0 +1,15 @@
+<!--
+    Author: Liam Cottrell,
+    Purpose: Card Template that will generate a card from an objects values for placement Search page
+-->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card border-secondary">
+        <div class="card-header"><img src="images/companylogos/pwc.jpg"> <%= placement.CompanyName%></div>
+        <div class="card-body text-secondary">
+            <h5 class="card-title"><%= placement.Title %> <span class="badge badge-pill badge-info"><%= placement.Length%></span></h5>
+            <small class="text-muted">Added: <%= placement.DateAdded%></small>
+            <p class="card-text"><%= placement.About %></p>
+        </div>
+        <button type="button" class="btn btn-light">Click for Information</button>
+    </div>
+</div>

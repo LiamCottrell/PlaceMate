@@ -4,7 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser'); // Allows us to Parse JSON
 const { check, validationResult } = require('express-validator/check'); // Simple package to allow us to validate HTML forms
 const { matchedData, sanitize } = require('express-validator/filter'); // More Instruction: https://github.com/ctavan/express-validator
-var flash = require('connect-flash'); // Create Flash Messages 
+var flash = require('connect-flash'); // Create Flash Messages
 var session = require('express-session'); // Use of Session to allow us to keep perpetual sessions between pages
 var passport = require('passport'); //  authentication middleware for Node.js
 
@@ -41,6 +41,7 @@ let index = require('./routes/index');
 let searchResults = require('./routes/searchResults');
 let placementInfo = require('./routes/placementInfo');
 let placementEdit = require('./routes/placementEdit');
+let createPlacement = require('./routes/createPlacement');
 let login = require('./routes/login');
 let account = require('./routes/account');
 let register = require('./routes/register');
@@ -50,6 +51,7 @@ app.use('/', index);
 app.use('/search', searchResults);
 app.use('/placementInfo', placementInfo);
 app.use('/placementEdit', placementEdit);
+app.use('/createPlacement', createPlacement);
 app.use('/login', login);
 app.use('/account', account);
 app.use('/register', register);

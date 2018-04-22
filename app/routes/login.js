@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
     } else {
         res.render('pages/login');
     }
-}
+});
            
 /*
     Create Passport JS strategy to take form details and perform authentication
@@ -71,7 +71,7 @@ router.post('/remove', function(req,res){
   StudentController.Remove(req.body.Username);
 });
 
-router.get('/Login-C', function(req,res){
+/*router.get('/Login-C', function(req,res){
   CompanyController.FindOne(req.query.CompanyName).then(function(user,req){
       if (user.Email == req.query.Email && user.Password == req.query.Password){
         res.responseText="Loggedin"
@@ -79,6 +79,7 @@ router.get('/Login-C', function(req,res){
       else{
         res.responseText="Something went wrong"
       }
-      });
+      });*/
+
 
 module.exports = router;

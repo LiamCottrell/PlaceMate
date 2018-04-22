@@ -21,7 +21,7 @@ Purpose: Create a login form that can allow a user to be authenticated
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form class="form-signin">
+        <form class="form-signin" method="post">
           <h1 class="h3 mb-3 font-weight-normal">Student Sign in</h1>
           <!--           <button class="btn btn-block btn-social btn-facebook" href="/login/facebook?">
   <i class="fab fa-facebook"></i>
@@ -43,13 +43,13 @@ Purpose: Create a login form that can allow a user to be authenticated
             <div class="input-group-prepend">
               <span class="input-group-text" id="email-addon"><i class="fas fa-envelope"></i></span>
             </div>
-            <input id="student-email" type="text" class="form-control" placeholder="example@example.co.uk" aria-label="Email" aria-describedby="email-addon" required autofocus>
+            <input id="student-email" name="email" type="text" class="form-control" placeholder="example@example.co.uk" aria-label="Email" aria-describedby="email-addon" required autofocus>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="password-addon"><i class="fas fa-unlock-alt"></i></span>
             </div>
-            <input id="student-password" type="password" class="form-control" placeholder="********" aria-label="Password" aria-describedby="password-addon">
+            <input id="student-password" name="password" type="password" class="form-control" placeholder="********" aria-label="Password" aria-describedby="password-addon">
           </div>
           <small id="studentHelpBlock" class="form-text text-muted">
               Please Log in with your PlaceMate credentails. If you have not registered, please register first.

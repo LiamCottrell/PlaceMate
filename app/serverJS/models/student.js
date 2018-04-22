@@ -1,25 +1,24 @@
 /*Purpose of this file is to specify the data the the Student collection will be storing*/
 
-/*Declare necissary dependancies*/
+/*Declare necessary dependencies*/
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 /*Create Schema using mongoose and apply schema as a template of how our data will be stored*/
 
 const StudentSchema = mongoose.Schema({
-  First_Name: String,
-  Last_Name: String,
-  Email: {
-  	type: String,
-  	index : true
-  },
-  Password: String,
-  City: String,
-  DoB: String,
-  Profession: String
+    first_name: String,
+    last_name: String,
+    email: {
+        type: String,
+        index : true
+    },
+    city: String,
+    date_of_birth: Date,
+    password: String
 });
 
-var Student = module.exports = mongoose.model('Students', StudentSchema);
+let Student = module.exports = mongoose.model('students', StudentSchema);
 
 
 /*Export function called "CreateStudent"
@@ -32,4 +31,26 @@ module.exports.createStudent = function(newStudent, callback){
 			newStudent.save(callback);
 		});
 	});
+};
+
+
+/*Aquires Student details with provided email address*/
+
+module.exports.getStudentByEmail = function(email, callback){
+    var query = {email: email};
+    Student.findOne(query, callback);
+};
+
+/*Gets Students details with provided id*/
+module.exports.getStudentById = function(id, callback){
+    Student.findById(id, callback);
+};
+
+
+/*Takes password from cleartext and compares it to the hashed password provided.*/
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+    bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+        if(err) throw err;
+        callback(null, isMatch);
+    });
 };

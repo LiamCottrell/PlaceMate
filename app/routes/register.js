@@ -4,7 +4,13 @@ let router = require('express').Router();
 var Student = require('../serverJS/models/student.js');
 
 router.get('/', function(req, res, next) {
-    res.render('pages/register');
+    /*If logged in already, redirect to home page*/
+    if(req.user){
+        res.redirect('/');
+    } else {
+        res.render('pages/register');
+    }
+
 });
 
 router.post('/', function(req, res, next) {

@@ -1,4 +1,7 @@
-<div class="container">
-	<div class="card-deck" id="CardDeck">
-	</div>
+
+<div class="row" id="CardDeck">
+		<% placement.forEach(function(result){ %>
+				<!--ForEach Placement that matches the search, pass the result to generate a new card.-->
+				<%- include('../partials/search/card', {placement: result}); %>
+		<% }); %>
 </div>

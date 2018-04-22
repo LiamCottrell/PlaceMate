@@ -24,8 +24,8 @@ module.exports = {
     });
   },
 
-  PlacementInfo: function (title) {
-    return Placement.findOne({Title : title})
+  PlacementInfo: function (_id) {
+    return Placement.findOne({_id : _id})
   },
 
   SearchPlacements: function(SearchParameter) {

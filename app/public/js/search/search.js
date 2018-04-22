@@ -8,3 +8,7 @@ $('#searchbtn').click(function() {
     window.location.href = pathname;
     }
   })
+
+$('.SearchResults').click(function(){
+  alert(this.id)
+})

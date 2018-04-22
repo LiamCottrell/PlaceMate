@@ -13,7 +13,11 @@ router.get('/', function (req, res, next) {
     } else {
         res.render('pages/login');
     }
+<<<<<<< HEAD
 });
+=======
+})
+>>>>>>> master
 
 /*
     Create Passport JS strategy to take form details and perform authentication
@@ -110,7 +114,11 @@ router.post('/remove', function (req, res) {
       else{
         res.responseText="Something went wrong"
       }
+<<<<<<< HEAD
       });*/
 
+=======
+    })});
+>>>>>>> master
 
 module.exports = router;

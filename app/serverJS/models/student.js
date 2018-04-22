@@ -15,7 +15,9 @@ const StudentSchema = mongoose.Schema({
     },
     city: String,
     date_of_birth: Date,
-    password: String
+    password: String,
+    linkedin: String,
+    image: String
 });
 
 let Student = module.exports = mongoose.model('students', StudentSchema);
@@ -44,6 +46,33 @@ module.exports.getStudentByEmail = function(email, callback){
 /*Gets Students details with provided id*/
 module.exports.getStudentById = function(id, callback){
     Student.findById(id, callback);
+};
+
+/*Find if a LinkedIn Profile exists, and if not, create one.*/
+module.exports.findOrCreate = function (profile, callback){
+    var studentObj = new Student;
+    Student.findOne({linkedin : profile.id},function(err,result){
+        /*console.log(result);*/
+        if(!result){
+            studentObj.first_name = profile.name.givenName;
+            studentObj.last_name = profile.name.familyName;
+            studentObj.linkedin = profile.id;
+            studentObj.email = profile.emails[0].value;
+            studentObj.image = profile._json.pictureUrl;
+            studentObj.city = profile._json.location.name;
+            studentObj.date_of_birth = new Date();
+
+            studentObj.save(callback);
+        }else{
+            callback(err,result);
+        }
+    });
+};
+
+/*Find student by linkedin id*/
+module.exports.getStudentByLinkedInId = function(id, callback){
+    var query = {linkedin: id};
+    Student.findOne(query, callback);
 };
 
 

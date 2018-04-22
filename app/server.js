@@ -22,16 +22,16 @@ app.set('view engine', 'ejs');
 
 /*Declare BodyParser Middleware*/
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(cookieParser('MyCodeBringsAlltheNerdsTotheYard'));
 
 /*Declare Express session*/
 app.use(session({
-	secret: 'JohnIsaacs',
+    secret: 'JohnIsaacs',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 24 * 60 * 60 * 1000 }
+    cookie: {maxAge: 24 * 60 * 60 * 1000}
 }));
 
 /*Declare flash*/
@@ -43,18 +43,18 @@ app.use(passport.session());
 
 // Express Validator
 app.use(expressValidator({
-    errorFormatter: function(param, msg, value) {
+    errorFormatter: function (param, msg, value) {
         var namespace = param.split('.')
-            , root    = namespace.shift()
+            , root = namespace.shift()
             , formParam = root;
 
-        while(namespace.length) {
+        while (namespace.length) {
             formParam += '[' + namespace.shift() + ']';
         }
         return {
-            param : formParam,
-            msg   : msg,
-            value : value
+            param: formParam,
+            msg: msg,
+            value: value
         };
     }
 }));
@@ -68,21 +68,22 @@ let placementEdit = require('./routes/placementEdit');
 let login = require('./routes/login');
 let account = require('./routes/account');
 let register = require('./routes/register');
+let logout = require('./routes/logout');
 
 //Connection to mongodb
 
 mongoose.connect('mongodb://localhost/DataMate');
 
-mongoose.connection.once('open', function(){
+mongoose.connection.once('open', function () {
 
-  console.log("Connection to DataMate Server Made")
+    console.log("Connection to DataMate Server Made")
 
-}).on('error',function(error){
-  console.log("Attempted Connection Failed - Error: " + error)
+}).on('error', function (error) {
+    console.log("Attempted Connection Failed - Error: " + error)
 });
 
 /*Every Request to our page*/
-app.use(function (req,res,next) {
+app.use(function (req, res, next) {
     /*Display to console the request method for testing*/
     console.log("/" + req.method);
     /*Global Variables*/
@@ -118,9 +119,10 @@ app.use('/account', account);
 
 app.use('/register', register);
 
+app.use('/logout', logout);
 
 
 /*Set Port for our application to be listening to requests on*/
-app.listen(3000,function(){
-	console.log("Live at Port 3000");
+app.listen(3000, function () {
+    console.log("Live at Port 3000");
 });

@@ -9,6 +9,7 @@ const session = require('express-session'); // Use of Session to allow us to kee
 const passport = require('passport'); //  authentication middleware for Node.js
 const mongoose = require('mongoose');
 
+
 /*Setup and configure Authentication System strategies*/
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -65,6 +66,7 @@ let index = require('./routes/index');
 let search = require('./routes/search');
 let placementInfo = require('./routes/placementInfo');
 let placementEdit = require('./routes/placementEdit');
+let createPlacement = require('./routes/createPlacement');
 let login = require('./routes/login');
 let account = require('./routes/account');
 let register = require('./routes/register');
@@ -111,6 +113,8 @@ app.use('/search', search);
 app.use('/placementInfo', placementInfo);
 
 app.use('/placementEdit', placementEdit);
+
+app.use('/createPlacement', createPlacement);
 
 app.use('/login', login);
 

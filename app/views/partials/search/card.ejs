@@ -2,7 +2,7 @@
     Author: Liam Cottrell,
     Purpose: Card Template that will generate a card from an objects values for placement Search page
 -->
-<div class="col-md-6 col-lg-4 col-xl-3">
+<div class="col-md-6 col-lg-4 col-xl-3 MainCard">
     <div class="card border-secondary">
         <div class="card-header"><img src="images/companylogos/pwc.jpg"> <%= placement.CompanyName%></div>
         <div class="card-body text-secondary">
@@ -10,6 +10,6 @@
             <small class="text-muted">Added: <%= placement.DateAdded%></small>
             <p class="card-text"><%= placement.About %></p>
         </div>
-        <button type="button" class="btn btn-light" id='<%= placement.Title %>'>Click for Information</button>
+        <button type="button" class="btn btn-light" id='<%= placement._id %>'>Click for Information</button>
     </div>
 </div>

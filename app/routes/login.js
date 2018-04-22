@@ -12,8 +12,8 @@ router.get('/', function(req, res, next) {
     } else {
         res.render('pages/login');
     }
-}
-           
+})
+
 /*
     Create Passport JS strategy to take form details and perform authentication
 */
@@ -79,6 +79,6 @@ router.get('/Login-C', function(req,res){
       else{
         res.responseText="Something went wrong"
       }
-      });
+    })});
 
 module.exports = router;

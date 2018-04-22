@@ -68,7 +68,6 @@ let placementInfo = require('./routes/placementInfo');
 let placementEdit = require('./routes/placementEdit');
 let createPlacement = require('./routes/createPlacement');
 let login = require('./routes/login');
-let account = require('./routes/account');
 let register = require('./routes/register');
 let logout = require('./routes/logout');
 
@@ -118,8 +117,6 @@ app.use('/placementEdit', placementEdit);
 app.use('/createPlacement', createPlacement);
 
 app.use('/login', login);
-
-app.use('/account', account);
 
 app.use('/register', register);
 

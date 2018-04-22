@@ -1,7 +1,19 @@
 let router = require('express').Router();
+let StudentController = require('../serverJS/controllers/student.js');
 
 router.get('/', function(req, res, next) {
-    res.render('pages/register');
+    /*If logged in already, redirect to home page*/
+    if(req.user){
+        res.redirect('/');
+    } else {
+        res.render('pages/register');
+    }
+
+});
+
+router.post('/createUser', function(req, res, next) {
+    StudentController.Add(req.body);
+    return res.send()
 });
 
 module.exports = router;

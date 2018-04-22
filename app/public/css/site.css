@@ -76,11 +76,21 @@ header, footer{
      filter: grayscale(0.8);
 }
 
-/* For the search page */
+/*!* For the search page *!
 .searchResults {
 	text-align: justify;
 	margin-right: 12%;
 	margin-left: 12%;
+}*/
+
+a {
+  color: black;
+  text-decoration: none; /* no underline */
+}
+
+a:hover {
+    color: black;
+    text-decoration: black;
 }
 
 .placementInfo {
@@ -141,4 +151,8 @@ header, footer{
 
 .loginform{
 	margin-top: 40px;
+}
+
+.MainCard{
+	padding-top: 15px
 }

@@ -15,8 +15,17 @@
                 </li>
             </ul>
             <% if (student){ %>
-            <button type="button" class="btn btn-outline-secondary" id="logoutbtn">
-                Logout <%= student.first_name %></button>
+            <% if (student.image) { %>
+            <img src="<%= student.image %>" alt="<%= student.first_name %>'s Profile Picture"
+                 style="height:3vh; border-radius: 5px; padding-right: 5px;">
+            <% } else { %>
+            <div style="font-size:2em; padding-right: 5px; color:grey;">
+                <i class="fas fa-user-circle"></i>
+            </div>
+
+            <% } %>
+
+            <a href="/logout" class="btn btn-outline-secondary" role="button">Logout <%= student.first_name %></a>
             <% } else { %>
             <button type="button" class="btn btn-outline-secondary" id="loginbtn">Login</button>
             <% } %>

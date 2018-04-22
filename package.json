@@ -15,6 +15,7 @@
     "mongoose": "*",
     "passport": "*",
     "passport-http": "*",
+    "passport-linkedin": "^1.0.0",
     "passport-local": "*"
   },
   "devDependencies": {},

@@ -1,3 +1,4 @@
+//
 $(document).ready(function(){
   FetchPanels()
   })
@@ -15,6 +16,13 @@ function FetchPanels(){
   }).fail(function(response) {
      $('#CardDeck').html(response.responseText)
      $("#CardDeck button").on("click", function() {
-         alert(this.id);})
+         LoadPlacement(this.id);
    });
+})}
+
+function LoadPlacement(Title){
+  var pathname = window.location.pathname;
+  pathname = pathname.substring(0, pathname.indexOf("/"));
+  pathname += "/placementinfo?Title=" + Title;
+  window.location.href = pathname;
 }

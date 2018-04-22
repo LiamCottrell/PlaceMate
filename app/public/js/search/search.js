@@ -2,16 +2,9 @@
 $('#searchbtn').click(function() {
   Search = $('#SearchParameters').val()
   if (Search.length > 0) {
-      var Search = {SearchParameter: Search}
-       $.ajax({
-        url: '/panels',
-        type:'get',
-        dataType:'json',
-        data: Search
-      }).done(function(){
-           //this doesn't fire for some reason
-          alert("suc");
-       }).fail(function(response) {
-          $('#CardDeck').html(response.responseText)
-        });}})
-
+    var pathname = window.location.pathname;
+    pathname = pathname.substring(0, pathname.indexOf("/"));
+    pathname += "/search?SearchParameter=" + Search;
+    window.location.href = pathname;
+    }
+  })

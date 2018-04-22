@@ -3,6 +3,7 @@ let StudentController = require('../serverJS/controllers/student');
 let Student = require('../serverJS/models/student');
 let passport = require('passport');
 let LocalStrategy = require('passport-local');
+let CompanyController = require('../serverJS/controllers/company');
 
 router.get('/', function(req, res, next) {
     /*If logged in already, redirect to home page*/
@@ -11,8 +12,8 @@ router.get('/', function(req, res, next) {
     } else {
         res.render('pages/login');
     }
-});
-
+}
+           
 /*
     Create Passport JS strategy to take form details and perform authentication
 */
@@ -70,10 +71,14 @@ router.post('/remove', function(req,res){
   StudentController.Remove(req.body.Username);
 });
 
-router.get('/findOne', function(req,res){
-  StudentController.FindOne(req.query.Firstname).then( function(users){
-       res.json(users);
-  });
-});
+router.get('/Login-C', function(req,res){
+  CompanyController.FindOne(req.query.CompanyName).then(function(user,req){
+      if (user.Email == req.query.Email && user.Password == req.query.Password){
+        res.responseText="Loggedin"
+      }
+      else{
+        res.responseText="Something went wrong"
+      }
+      });
 
 module.exports = router;

@@ -2,7 +2,7 @@
     Author: Liam Cottrell,
     Purpose: This is the results page showing all the placements after a search has been carried out
  -->
-<div class="row">
+<div class="row" id="ResultContainer">
     <% placement.forEach(function(result){ %>
         <!--ForEach Placement that matches the search, pass the result to generate a new card.-->
         <%- include('../partials/search/card', {placement: result}); %>

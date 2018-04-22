@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Author: Liam Cottrell,
 Purpose: Create a login form that can allow a user to be authenticated
  -->
@@ -15,7 +15,7 @@ Purpose: Create a login form that can allow a user to be authenticated
 
     <div id="collapseStudent" class="collapse show" aria-labelledby="StudentCard" data-parent="#accordion">
       <div class="card-body">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="FieldError" style="display: none">
           <strong>No Anakin!</strong> You should check in on some of those fields below.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -54,7 +54,7 @@ Purpose: Create a login form that can allow a user to be authenticated
           <small id="studentHelpBlock" class="form-text text-muted">
               Please Log in with your PlaceMate credentails. If you have not registered, please register first.
           </small>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <button class="btn btn-lg btn-primary btn-block" type="button" id="StudentLogin">Sign in</button>
         </form>
       </div>
     </div>
@@ -74,9 +74,9 @@ Purpose: Create a login form that can allow a user to be authenticated
           <h1 class="h3 mb-3 font-weight-normal">Company Sign in</h1>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="email-addon"><i class="fas fa-envelope"></i></span>
+              <span class="input-group-text" id="email-addon"><i class="fas fa-user"></i></span>
             </div>
-            <input id="company-email" type="text" class="form-control" placeholder="example@example.co.uk" aria-label="Email" aria-describedby="email-addon" required autofocus>
+            <input id="company-name" type="text" class="form-control" placeholder="PlaceMate Corporation" aria-label="Email" aria-describedby="email-addon" required autofocus>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -86,7 +86,7 @@ Purpose: Create a login form that can allow a user to be authenticated
           </div>
           <small id="companyHelpBlock" class="form-text text-muted">
               Please Log in with your PlaceMate Company credentails. If you have not registered, please email a request to become a PlaceMate Company Partner.
-          </small>  
+          </small>
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
       </div>

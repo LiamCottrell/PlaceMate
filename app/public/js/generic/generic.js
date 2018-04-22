@@ -1,4 +1,8 @@
-//Use Jquery id to call a click method that will produce an alert for the user.
+//If sesson is active, change login to sign out
+
 $('#loginbtn').click(function(){
-  alert("Logging you in...");
+  var pathname = window.location.pathname;
+  pathname = pathname.substring(0, pathname.indexOf("/"));
+  pathname += "login";
+  window.location.href = pathname;
 });

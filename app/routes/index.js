@@ -7,12 +7,6 @@ router.get('/', function(req, res, next) {
     res.render('pages/index');
 });
 
-router.get('/Searchtester', function(req,res){
-  PlacementController.SearchPlacements(req.query.SearchParameter).then( function(placements){
-       res.json(placements);
-  });
-});
-
 router.post('/AddPlacement', function(req,res){
   PlacementController.Add(req.body);
 });
@@ -27,7 +21,6 @@ router.get('/Seach', function(req,res){
                 Company = CompanyController.FindOne(placement.CompanyName)
                 package = package +CreateElement(Company, Placement)
             }
-            console.log(package)
             res.send(package)
             })});
 

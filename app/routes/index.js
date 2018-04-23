@@ -4,7 +4,7 @@ let CompanyController = require('../serverJS/controllers/company');
 
 
 router.get('/', function(req, res, next) {
-  PlacementController.PanelInfo("Computing").then(function(results){
+  PlacementController.PanelInfo("Accountancy").then(function(results){
     res.render('pages/index', {
         placement: results
       });

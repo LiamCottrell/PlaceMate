@@ -29,15 +29,23 @@ module.exports = {
   },
 
   SearchPlacements: function(SearchParameter) {
-    return Placement.find().or(
-        [{CompanyName: new RegExp(SearchParameter, 'i')},
-        {Title: new RegExp(SearchParameter, 'i')},
-        {About: new RegExp(SearchParameter, 'i')},
-        {Role: new RegExp(SearchParameter, 'i')},
-        {Requirements: new RegExp(SearchParameter, 'i')},
-        {Location: new RegExp(SearchParameter, 'i')},
-        {Subject: new RegExp(SearchParameter, 'i')},
-        {Length: new RegExp(SearchParameter, 'i')}])
+    array = SearchParameter.split(" ")
+    var regex = [];
+    for (var i = 0; i< array.length; i++){
+      regex[i] = new RegExp(array[i], 'i');
+    }
+    console.log(regex)
+    return Placement.find({$or:
+        [{CompanyName: {$in: regex}},
+        {Title:{$in: regex}},
+        {About:{$in: regex}},
+        {Role:{$in: regex}},
+        {Requirements: {$in: regex}},
+        {Location: {$in: regex}},
+        {Subject: {$in: regex}},
+        {Length: {$in: regex}}]}
+
+      )
   },
 
     PanelInfo: function(SearchParameter) {

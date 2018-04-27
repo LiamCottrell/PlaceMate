@@ -29,7 +29,7 @@ module.exports = {
   },
 
   SearchPlacements: function(SearchParameter) {
-    array = SearchParameter.split(" ")
+        array = SearchParameter.split(" ")
     var regex = [];
     for (var i = 0; i< array.length; i++){
       regex[i] = new RegExp(array[i], 'i');
@@ -45,11 +45,15 @@ module.exports = {
         {Subject: {$in: regex}},
         {Length: {$in: regex}}]}
 
-      )
-  },
+      )},
 
     PanelInfo: function(SearchParameter) {
+    array = SearchParameter.split(" ")
+    var regex = [];
+    for (var i = 0; i< array.length; i++){
+      regex[i] = new RegExp(array[i], 'i');
+    }
     console.log(SearchParameter)
-    return Placement.find({Subject: new RegExp(SearchParameter, 'i')}).limit(4)
+    return Placement.find({Subject: {$in: regex}}).limit(4)
   }
 }

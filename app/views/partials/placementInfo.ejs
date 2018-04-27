@@ -1,7 +1,6 @@
 <!-- This is for the Information on a Placement -->
 <div class="container" id="PlacementDetails">
     <!-- Added in a nifty image of the Company Logo -->
-    <img src="./images/companylogos/pwc.jpg" alt="Logo">
     <h5 class="placementTitle"><%= placement.Title %> - <%= placement.CompanyName %></h5>
     <!-- This is where all the content will go for the Placement-->
     <div class="row">
@@ -9,7 +8,7 @@
             <h6><u>About <span id="companyname"><%= placement.CompanyName %></span>:</u></h6>
             <p><%= company.About %></p>
             <h6><u>Your Role: </u></h6>
-            <p><%= placement.Role %></p>
+            <p><%= placement.About %></p>
             <h6><u>Requirements: </u></h6>
             <ul>
                 <% placement.Requirements.forEach(function(result){ %>

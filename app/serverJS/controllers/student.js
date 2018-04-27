@@ -1,4 +1,6 @@
 const Student = require('../models/student');
+const bcrypt = require('bcryptjs');
+
 module.exports = {
 
     Add: function(body){
@@ -8,11 +10,17 @@ module.exports = {
           email: body.email,
           city: body.city,
           date_of_birth: body.date_of_birth,
-          password: body.password
+          password: body.password,
+          subject: body.subject
         });
-
-        student.save().then(function(){
-          console.log(student.first_name + " has created an account /n Full Information - ", student)
+        
+        bcrypt.genSalt(10, function (err, salt) {
+            bcrypt.hash(student.password, salt, function (err, hash) {
+                student.password = hash;
+                 student.save().then(function(){
+                  console.log(student.first_name + " has created an account /n Full Information - ", student)
+                });
+            });
         });
     },
 
@@ -22,17 +30,6 @@ module.exports = {
 
     FindOne: function (name) {
         return Student.findOne({first_name: name})
-    },
-
-    Remove: function (name) {
-        Student.findOne({first_name: name}, function (err, model) {
-            if (err) {
-                return;
-            }
-            Student.remove(function (err) {
-
-                console.log(name + " has been removed from the database")
-            });
-        });
+    
     }
 };

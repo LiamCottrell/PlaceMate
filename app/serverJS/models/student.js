@@ -17,7 +17,9 @@ const StudentSchema = mongoose.Schema({
     date_of_birth: Date,
     password: String,
     linkedin: String,
-    image: String
+    image: String,
+    subject: String
+    
 });
 
 let Student = module.exports = mongoose.model('students', StudentSchema);
@@ -26,11 +28,11 @@ let Student = module.exports = mongoose.model('students', StudentSchema);
 /*Export function called "CreateStudent"
 This will allow us to pass in an object with student information
 It will then hash the password, then save the user to the database.*/
-module.exports.createStudent = function (newStudent, callback) {
+module.exports.createStudent = function (student, callback) {
     bcrypt.genSalt(10, function (err, salt) {
-        bcrypt.hash(newStudent.password, salt, function (err, hash) {
-            newStudent.password = hash;
-            newStudent.save(callback);
+        bcrypt.hash(student.password, salt, function (err, hash) {
+            student.password = hash;
+            student.save(callback);
         });
     });
 };
@@ -39,6 +41,7 @@ module.exports.createStudent = function (newStudent, callback) {
 /*Aquires Student details with provided email address*/
 
 module.exports.getStudentByEmail = function (email, callback) {
+    console.log(email);
     var query = {email: email};
     Student.findOne(query, callback);
 };
@@ -61,6 +64,7 @@ module.exports.findOrCreate = function (profile, callback) {
             studentObj.image = profile._json.pictureUrl;
             studentObj.city = profile._json.location.name;
             studentObj.date_of_birth = new Date();
+            studentObj.subject = profile._json.industry;
 
             studentObj.save(callback);
         } else {

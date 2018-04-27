@@ -1,102 +1,113 @@
-<!--
-Purpose: Create a register form that can allow a user or company to register an account
- -->
- <!-- Why: Chose to use an accordion as it saves space - rather than scrolling through loads of input boxes.
-            Accordion looks sleeker and is easier to use.
-  -->
-<div id="accordion" class="registerContent">
-  <div class="card">
-    <div class="card-header" id="StudentCard">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseStudent" aria-expanded="true" aria-controls="collapseStudent">
-          <!-- Used "fas fa-user" as it is a premade icon for a User.
-              You wouldn't reinvent the wheel - why remake an icon?
-            -->
-          <i class="fas fa-user"></i>
-          Student Register
-        </button>
-      </h5>
-    </div>
-<!-- Start of the Student register block  -->
-    <div id="collapseStudent" class="collapse show" aria-labelledby="StudentCard" data-parent="#accordion">
-      <div class="card-body">
-        <!-- Used: alert-warning - a premade alert to warn the user of something.
-                  We chose to use this so that the Student doesn't miss an input field.
-        -->
-        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="FieldError" style="display: none">
-          <strong>No Anakin!</strong> You should check in on some of those fields below.
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="offset-lg-2 col-lg-8 col-sm-8 col-8 border rounded">
+            <h3 class="text-center lead">Register an Account</h3>
+            <form class="container" id="needs-validation" method="post" action="register/createUser" novalidate>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label class="text-inverse" for="validationCustom01">First Name</label>
+                            <input type="text" class="form-control" id="FirstName" placeholder="First name"
+                                   name="first_name" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label class="text-inverse" for="validationCustom02">Last Name</label>
+                            <input type="text" class="form-control" id="LastName" placeholder="Last Name"
+                                   name="last_name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="text-inverse" for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email"
+                                   required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Email.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label class="text-inverse" for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password"
+                                   name="password" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid password.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label class="text-inverse" for="inputpassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmpassword"
+                                   placeholder="Confirm Password" name="password_confirm" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid password.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label class="text-inverse" for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="City" name="city"
+                                   required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label class="text-inverse" for="date_of_birth">Date of Birth</label>
+                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Date of Birth.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                        <label class="text-inverse" for="date_of_birth">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subjects of Interest" required>
+                            <div class="invalid-feedback">
+                                Please enter the subject you study
+                            </div>
+                    </div>
+                    </div></div>
+                <div class="row">
+                    <div class="text-center col-lg-12 col-sm-12 col-12">
+                        <a class="btn btn-block btn-social btn-linkedin" href="/login/linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            Register with LinkedIn
+                        </a>
+                        <small id="studentSocialHelpBlock" class="form-text text-muted">
+                            Register with your LinkedIn account as an alternative to filling in forms!
+                        </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center col-lg-12 col-sm-12 col-12">
+                        <small><i class="fas fa-info-circle"></i> All feilds are manditory to be filled out for registration.
+                        </small>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-12 text-center">
+                        <input class="btn btn-outline-primary" id="registrationSubmit" type="submit"
+                               value="Register Account">
+                    </div>
+                </div>
+                <hr>
+            </form>
         </div>
-        <!-- Use of form class contains elements such as; Email input and Password input.
-        -->
-        <form class="form-register" method="post">
-          <h1 class="h3 mb-3 font-weight-normal">Student Register</h1>
-          <hr>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="email-addon"><i class="fas fa-envelope"></i></span>
-            </div>
-            <input id="student-email" name="email" type="text" class="form-control" placeholder="example@example.co.uk" aria-label="Email" aria-describedby="email-addon" required autofocus>
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="password-addon"><i class="fas fa-unlock-alt"></i></span>
-            </div>
-            <input id="student-password" name="password" type="password" class="form-control" placeholder="***Create a Password***" aria-label="Password" aria-describedby="password-addon">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="password-addon"><i class="fas fa-unlock-alt"></i></span>
-            </div>
-            <input id="student-password-confirm" name="password" type="password" class="form-control" placeholder="***Confirm Password***" aria-label="Password" aria-describedby="password-addon">
-          </div>
-          <small id="studentHelpBlock" class="form-text text-muted">
-              Please Sign up with your Email and Create a Password.
-          </small>
-          <button class="btn btn-lg btn-primary btn-block" type="button" id="StudentRegister">Register</button>
-        </form>
-      </div>
     </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header" id="CompanyCard">
-      <h5 class="mb-0">
-        <!-- btn-link collapsed: As part of Accordion we used this class
-              to be able to collapse each section when required.
-        -->
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseCompany" aria-expanded="false" aria-controls="collapseCompany">
-          <i class="fas fa-building"></i>
-          Company Register
-        </button>
-      </h5>
-    </div>
-
-    <!-- Start of the Company register block -->
-    <div id="collapseCompany" class="collapse" aria-labelledby="CompanyCard" data-parent="#accordion">
-      <div class="card-body">
-        <form class="form-register">
-          <h1 class="h3 mb-3 font-weight-normal">Company Register</h1>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="email-addon"><i class="fas fa-user"></i></span>
-            </div>
-            <input id="company-name" type="text" class="form-control" placeholder="PlaceMate Corporation" aria-label="Email" aria-describedby="email-addon" required autofocus>
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="password-addon"><i class="fas fa-unlock-alt"></i></span>
-            </div>
-            <input id="company-password" type="password" class="form-control" placeholder="********" aria-label="Password" aria-describedby="password-addon">
-          </div>
-          <small id="companyHelpBlock" class="form-text text-muted">
-              Please email a request to become a PlaceMate Company Partner then Register with the provided Credentials.
-          </small>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-        </form>
-      </div>
-    </div>
-  </div>
 </div>

@@ -3,6 +3,11 @@
 	color: #000;
 }
 
+.headerbtns{
+    margin-right: 5px;
+
+}
+
 .dropdown-menu {
 	right: 0;
 	left: auto;

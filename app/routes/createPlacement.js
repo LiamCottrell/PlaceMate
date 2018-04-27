@@ -7,4 +7,10 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.post('/AddPlacement', function(req,res){
+  console.log(req.body.Requirements)
+  PlacementController.Add(req.body);
+  return res.send()
+});
+
 module.exports = router;

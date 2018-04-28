@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+//Author - Nicholas Wright
 //Create Schema and Model
 
 const PlacementSchema = new Schema({

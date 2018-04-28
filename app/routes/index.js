@@ -4,17 +4,23 @@ let CompanyController = require('../serverJS/controllers/company');
 
 
 router.get('/', function(req, res, next) {
-  PlacementController.PanelInfo("Computing").then(function(results){
+  console.log(req.user)
+  if (!req.user){
+      subject = ""
+  }
+    else{
+        subject = req.user.subject
+    }
+  //Author - Nicholas Wright
+  PlacementController.PanelInfo(subject).then(function(results){
     res.render('pages/index', {
         placement: results
       });
     })
   });
 
-router.post('/AddPlacement', function(req,res){
-  console.log(req.body.Requirements)
-  PlacementController.Add(req.body);
-  return res.send()
+router.post('/createplacement', function(req, res, next) {
+    PlacementController.Add(req.body);
 });
 
 module.exports = router;

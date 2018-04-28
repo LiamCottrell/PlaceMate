@@ -52,8 +52,8 @@ Did it in the most in-secure way possible due to time constraints
 passport.use(new LinkedInStrategy({
         consumerKey: "77hv6vxoqavolg",
         consumerSecret: "JFAISns62emMcDCF",
-        callbackURL: "http://localhost:3000/login/linkedin/callback",
-        profileFields: ['id', 'first-name', 'last-name', 'email-address', 'location', 'picture-url']
+        callbackURL: "http://clock-polka-3000.codio.io/login/linkedin/callback",
+        profileFields: ['id', 'first-name', 'last-name', 'email-address', 'location', 'picture-url', 'industry']
     },
     function (token, tokenSecret, profile, done) {
         Student.findOrCreate(profile, function (err, student) {
@@ -99,9 +99,6 @@ router.get('/get', function (req, res) {
     });
 });
 
-router.post('/remove', function (req, res) {
-    StudentController.Remove(req.body.Username);
-});
 
 
 module.exports = router;

@@ -1,7 +1,14 @@
+<!-- Author - Nicholas Wright
+     Pull the placement information about the entity we are trying to create
+     and generate a html object from it. I originally deployed a HTML
+     package to the client during the .ready() of the document
+     however this proved slow in load times so i switched to using
+     Templating engine
+    This was ripped and altered based on the original 'Template' for the placement page-->
+
 <!-- This is for the Information on a Placement -->
 <div class="container" id="PlacementDetails">
     <!-- Added in a nifty image of the Company Logo -->
-    <img src="./images/companylogos/pwc.jpg" alt="Logo">
     <h5 class="placementTitle"><%= placement.Title %> - <%= placement.CompanyName %></h5>
     <!-- This is where all the content will go for the Placement-->
     <div class="row">
@@ -9,7 +16,7 @@
             <h6><u>About <span id="companyname"><%= placement.CompanyName %></span>:</u></h6>
             <p><%= company.About %></p>
             <h6><u>Your Role: </u></h6>
-            <p><%= placement.Role %></p>
+            <p><%= placement.About %></p>
             <h6><u>Requirements: </u></h6>
             <ul>
                 <% placement.Requirements.forEach(function(result){ %>
@@ -24,6 +31,7 @@
             <div id="placeMap" class="pull-right mapObject"></div>
         </div>
         <!-- This is where the Apply Button is, once clicked it will redirect the user to a certain external webpage -->
-        <button type="button" class="applyButton" style="float:left;" id="<%= placement._id %>">Apply Now!</button>
+        <button type="button" class="applyButton" style="float:left;" id="Applybtn">Apply Now!</button>
         <script>var id = "<%= placement._id %>";</script>
+        <script>var link = "<%= placement.Link %>";</script>
     </div>

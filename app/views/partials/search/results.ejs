@@ -1,12 +1,14 @@
-<!--
-    Author: Liam Cottrell,
-    Purpose: Card Template that will generate a card from an objects values for placement Search page
--->
+<!-- Author - Nicholas Wright
+     Pull the placement information about the entity we are trying to create
+     and generate a html object from it. I originally deployed a HTML
+     package to the client during the .ready() of the document
+     however this proved slow in load times so i switched to using
+     Templating engine-->
 <div class="col-lg-12 searchResults">
     <a href=/placementinfo?_id=<%= placement._id %>>
         <br>
         <h4><%= placement.Title %> - <%= placement.CompanyName %></h4>
-        <h5><span class="badge badge-pill badge-success">5 months</span></h5>
+        <h5><span class="badge badge-pill badge-success"><%= placement.Length %></span></h5>
         <h6><%= placement.About %></h6>
         <p>Location: <%= placement.City %></p>
         <p>Pay: <%= placement.Pay %> </p>

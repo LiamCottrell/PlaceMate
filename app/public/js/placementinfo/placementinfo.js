@@ -1,3 +1,10 @@
+//Author - Nicholas Wright
+//Ideally, I would like to have done this on the server side, as it makes more sense
+//However, instead I have included this on client side so we could have an API call on the server and one on the client
+//It makes use of multiple API calls, one calls our own api to fetch the postcode of the placement
+//The second, calls google map api using our key (Another reason I would have rather had this on the server - Security)
+//it gathers the information from googles api for the longitude and latitude using our postcode
+//then sends that into our leaflet api to generate our map for our placement!
 $(document).ready(function(){
   FetchAddress(id)
   })
@@ -39,3 +46,7 @@ function GenerateMap(latlng){
   }).addTo(mymap);
   var marker = L.marker([latlng[0],latlng[1]]).addTo(mymap);
 }
+
+$("#Applybtn").click(function() {
+  window.location.href = link;
+});

@@ -65,13 +65,11 @@ app.use(expressValidator({
 let index = require('./routes/index');
 let search = require('./routes/search');
 let placementInfo = require('./routes/placementInfo');
-let placementEdit = require('./routes/placementEdit');
-let createPlacement = require('./routes/createPlacement');
 let login = require('./routes/login');
 let register = require('./routes/register');
 let logout = require('./routes/logout');
 
-//Connection to mongodb
+//Connection to mongodb, i have included a log no matter the response so we know if the server is not starting due to mongo failing.
 
 mongoose.connect('mongodb://localhost/DataMate');
 
@@ -111,10 +109,6 @@ app.use('/', index);
 app.use('/search', search);
 
 app.use('/placementInfo', placementInfo);
-
-app.use('/placementEdit', placementEdit);
-
-app.use('/createPlacement', createPlacement);
 
 app.use('/login', login);
 

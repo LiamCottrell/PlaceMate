@@ -13,7 +13,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/createUser', function(req, res, next) {
     StudentController.Add(req.body);
-    return res.send()
+    res.redirect("/");
+    return res.send();
 });
 
 module.exports = router;
